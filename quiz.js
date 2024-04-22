@@ -48,33 +48,8 @@ const data = [
 window.onload = function () {
     const questionSection = document.getElementById('question-section');
     const answerSection = document.getElementById('answer-section');
-    //answerSection.className = 'answer-section fade-in';
-    // data.forEach((item, index) => {
-    //     const question = document.createElement('p');
-    //     question.textContent = item.question;
-    //     questionSection.appendChild(question);
 
-    //     const form = document.createElement('form');
-    //     item.options.forEach(option => {
-    //         const label = document.createElement('label');
-    //         const radio = document.createElement('input');
-    //         radio.type = 'radio';
-    //         radio.name = `question${index}`;
-    //         radio.value = option;
-    //         radio.onclick = function() {
-    //             if (option === item.answer) {
-    //                 answerSection.innerHTML = "<span style='color: green;'>Correct answer!</span> " + item.answer+': '+item.explanation;;
-    //             } else {
-    //                 answerSection.innerHTML = item.answer+': '+item.explanation;
-    //             }
 
-    //         };
-    //         label.appendChild(radio);
-    //         label.appendChild(document.createTextNode(option));
-    //         form.appendChild(label);
-    //     });
-    //     questionSection.appendChild(form);
-    // });
 
     data.forEach((item, index) => {
         const question = document.createElement('p');
@@ -101,7 +76,7 @@ window.onload = function () {
                     console.log(character);
                     // Show the character when the correct answer is selected
                     character.style.display = 'block';
-                    setTimeout(function() {
+                    setTimeout(function () {
                         character.style.display = 'none';
                     }, 2000);
                 } else {
@@ -121,6 +96,33 @@ window.onload = function () {
         questionSection.appendChild(form);
     });
 };
+
+// Add the background changing code here
+//var images = ['images/background/1.jpg', 'images/background/2.jpg', 'images/background/3.jpg', 'images/background/4.jpg', 'images/background/5.jpg'];
+var images = ['images/background/9.jpg'];
+var currentImage = 0;
+//var containers = document.querySelectorAll('.answer-section, .question-section');
+var containers = document.querySelectorAll('.answer-section, .question-section');
+
+function changeBackground() {
+    containers.forEach(function (container) {
+        container.style.backgroundImage = 'url(' + images[currentImage] + ')';
+        container.style.backgroundSize = 'cover';
+        container.style.backgroundPosition = 'center';
+        container.style.width = '100%';
+        container.style.height = '100vh';
+        // container.classList.add('fade-in');
+        // setTimeout(function () {
+        //     container.classList.remove('fade-in');
+        // }, 2000);
+   
+    currentImage = (currentImage + 1) % images.length;
+    setTimeout(changeBackground, 5000); // Change image every 5 seconds
+});
+}
+
+changeBackground();
+
 
 function handleRadioChange(option, item, answerSection) {
     if (option === item.answer) {
