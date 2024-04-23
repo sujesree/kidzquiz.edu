@@ -76,6 +76,10 @@ window.onload = function () {
                     console.log(character);
                     // Show the character when the correct answer is selected
                     character.style.display = 'block';
+                    character.style.position = 'fixed';
+                    character.style.top = '50%';
+                    character.style.left = '50%';
+                    character.style.transform = 'translate(-50%, -50%)';
                     setTimeout(function () {
                         character.style.display = 'none';
                     }, 2000);
@@ -99,7 +103,7 @@ window.onload = function () {
 
 // Add the background changing code here
 //var images = ['images/background/1.jpg', 'images/background/2.jpg', 'images/background/3.jpg', 'images/background/4.jpg', 'images/background/5.jpg'];
-var images = ['./images/background/2.jpg'];
+var images = ['./images/background/11.jpg'];
 var currentImage = 0;
 //var containers = document.querySelectorAll('.answer-section, .question-section');
 var containers = document.querySelectorAll('.answer-section, .question-section');
