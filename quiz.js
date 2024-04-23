@@ -99,7 +99,7 @@ window.onload = function () {
 
 // Add the background changing code here
 //var images = ['images/background/1.jpg', 'images/background/2.jpg', 'images/background/3.jpg', 'images/background/4.jpg', 'images/background/5.jpg'];
-var images = ['./images/background/9.jpg'];
+var images = ['./images/background/2.jpg'];
 var currentImage = 0;
 //var containers = document.querySelectorAll('.answer-section, .question-section');
 var containers = document.querySelectorAll('.answer-section, .question-section');
