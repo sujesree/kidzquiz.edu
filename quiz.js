@@ -159,9 +159,9 @@ window.onload = function () {
             radio.value = option;
             radio.className = 'custom-control-input';
             radio.onchange = function () {
-                this.classList.add('animate__animated', 'animate__flash');
+                this.classList.add('fade-in');
                 setTimeout(() => {
-                    this.classList.remove('animate__animated', 'animate__flash');
+                    this.classList.remove('fade-in');
                 }, 1000);
                 //handleRadioChange(option, item, answerSection);
                 if (option === item.answer) {
