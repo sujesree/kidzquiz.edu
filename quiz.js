@@ -66,7 +66,8 @@ document.getElementById('user-info-form').addEventListener('submit', function (e
     if (username.toLowerCase().startsWith('ana')) {
         username = 'Miss Boom-Boom';
     }
-
+    const butterflyAnimation = document.getElementById('butterflyAnimation');
+    butterflyAnimation.style.display = 'none';
     // Get the greeting element
     var greeting = document.getElementById('greeting');
     var parent = greeting.parentElement;
@@ -78,7 +79,7 @@ document.getElementById('user-info-form').addEventListener('submit', function (e
     // Show the greeting with a typing animation
     greeting.style.display = 'block';
     parent.style.display = 'block';
-    greeting.style.fontFamily = "'Amatic SC', cursive";
+    greeting.style.fontFamily = "'Princess Sofia', cursive";
 
     var typingInterval = setInterval(function () {
         greeting.textContent += greetingText[i];
@@ -116,6 +117,11 @@ window.onload = function () {
     const answerSection = document.getElementById('answer-section');
     const nextButton = document.getElementById('next-button');
     const containerrow = document.getElementById('firstrow');
+
+
+    const butterflyAnimation = document.getElementById('butterflyAnimation');
+    butterflyAnimation.style.display = 'block';
+
     //const antsAnimation = document.getElementById('antsAnimation');
     // const catAnimation = document.getElementById('catAnimation');
     //const animations = [document.getElementById('antsAnimation'), document.getElementById('catAnimation')];
@@ -209,9 +215,9 @@ window.onload = function () {
             const parentDiv = document.createElement('div');
             parentDiv.id = 'shortexplain-section';
 
-            const para=document.createElement('p');
-            para.textContent= 'So ' + username + ',What did we learn today?';
-            para.style.fontFamily = "'Architects Daughter', cursive";
+            const para = document.createElement('p');
+            para.textContent = 'So ' + username + ',What did we learn today?';
+            para.style.fontFamily = "'Lugrasimo', cursive";
             para.style.fontSize = 'xxx-large';
             para.style.fontWeight = 'bold';
             parentDiv.appendChild(para);
@@ -223,7 +229,7 @@ window.onload = function () {
                     div.textContent = item.shortexplain;
                     div.style.padding = '20px';
                     div.style.paddingTop = '0px';
-                    div.style.fontFamily = "'Architects Daughter', cursive";
+                    div.style.fontFamily = "'Lugrasimo', cursive";
                     div.style.fontSize = 'x-large';
                     div.style.fontWeight = 'bold';
                     div.className = pickrandomAnimation; // Add your animation classes

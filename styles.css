@@ -11,6 +11,10 @@ body {
 
     padding: 20px;
     padding-bottom: 0px;
+    font-family: 'Lugrasimo', cursive;
+    /* font-family: 'Architects Daughter', cursive; */
+    font-size: larger;
+    font-weight: bold;
     /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Comic Sans MS'; */
 
@@ -28,18 +32,16 @@ body {
     /* Indie Flower */
     /* font-family: 'Baloo Bhai 2', cursive; */
     /* Baloo Bhai 2 */
-    font-family: 'Architects Daughter', cursive;
-    /* Architects Daughter */
-    font-size: large;
-    font-weight: bold;
+   
 }
 
 #answer-section,.shortexplain-section {
     padding: 20px;
     padding-top: 0px;
         /* font-family: 'Bubblegum Sans', sans-serif; */
-    font-family: 'Architects Daughter', cursive;
-    font-size: large;
+    /* font-family: 'Architects Daughter', cursive; */
+    font-family: 'Lugrasimo', cursive;
+    font-size: larger;
     font-weight: bold;
 }
 
@@ -552,217 +554,72 @@ p {
     }
 }
 
-/* ======================================================*/
-
-/* ==============CAT ANIMATION =======================*/
-.cat {
-    position: relative;
-    height: 170px;
-    width: 192.1px;
-}
-
-.ear {
-    position: absolute;
-    top: -30%;
-    height: 60%;
-    width: 25%;
-    background: #000000;
-}
-
-.ear::before,
-.ear::after {
-    content: '';
-    position: absolute;
-    bottom: 24%;
-    height: 10%;
-    width: 5%;
-    border-radius: 50%;
-    background: #161616;
-}
-
-.ear::after {
-    transform-origin: 50% 100%;
-}
-
-.ear--left {
-    left: -7%;
-    border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
-    transform: rotate(-15deg);
-}
-
-.ear--left::before,
-.ear--left::after {
-    right: 10%;
-}
-
-.ear--left::after {
-    transform: rotate(-45deg);
-}
-
-.ear--right {
-    right: -7%;
-    border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
-    transform: rotate(15deg);
-}
-
-.ear--right::before,
-.ear--right::after {
-    left: 10%;
-}
-
-.ear--right::after {
-    transform: rotate(45deg);
-}
-
-.face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-.eye {
-    position: absolute;
-    top: 35%;
-    height: 30%;
-    width: 31%;
-    background: #fff;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-}
-
-.eye::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 100%;
-    border-radius: 0 0 50% 50Array/0Array 0 40% 40%;
-    background: #161616;
-    animation: blink 4s infinite ease-in;
-}
-
-@keyframes blink {
+/* =======ButterFly Animation===============================================*/
+@keyframes colorChange {
     0% {
-        height: 0;
+      filter: hue-rotate(0deg);
     }
-
-    90% {
-        height: 0;
+    50% {
+      filter: hue-rotate(180deg);
     }
-
-    92.5% {
-        height: 100%;
-    }
-
-    95% {
-        height: 0;
-    }
-
-    97.5% {
-        height: 100%;
-    }
-
     100% {
-        height: 0;
+      filter: hue-rotate(360deg);
     }
-}
-
-.eye::before {
-    content: '';
-    position: absolute;
-    top: 60%;
-    height: 10%;
-    width: 15%;
-    background: #fff;
-    border-radius: 50%;
-}
-
-.eye--left {
-    left: 0;
-}
-
-.eye--left::before {
-    right: -5%;
-}
-
-.eye--right {
-    right: 0;
-}
-
-.eye--right::before {
-    left: -5%;
-}
-
-.eye-pupil {
-    position: absolute;
-    top: 25%;
-    height: 50%;
-    width: 20%;
-    background: #161616;
-    border-radius: 50%;
-    animation: look-around 4s infinite;
-}
-
-@keyframes look-around {
+  }
+@keyframes fly {
     0% {
-        transform: translate(0);
+        transform: translate(0, 0) rotate(90deg);
     }
-
-    5% {
-        transform: translate(50%, -25%);
-    }
-
-    10% {
-        transform: translate(50%, -25%);
-    }
-
-    15% {
-        transform: translate(-100%, -25%);
-    }
-
-    20% {
-        transform: translate(-100%, -25%);
-    }
-
     25% {
-        transform: translate(0, 0);
+        transform: translate(15vw, 30vh) rotate(120deg);
     }
-
+    50% {
+        transform: translate(50vw, 0) rotate(90deg);
+    }
+    75% {
+        transform: translate(75vw, 0) rotate(120deg);
+    }
     100% {
-        transform: translate(0, 0);
+        transform: translate(100vw, 0) rotate(90deg);
     }
 }
 
-.eye--left .eye-pupil {
-    right: 30%;
+#butterflyAnimation,#butterflyAnimation1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+    width: 100px; 
+    background-image: url('images/animations/butterfly.gif');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    animation: fly 10s infinite, colorChange 4s infinite;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    
 }
 
-.eye--right .eye-pupil {
-    left: 30%;
-}
-
-.eye-pupil::after {
-    content: '';
-    position: absolute;
-    top: 30%;
-    right: -5%;
-    height: 20%;
-    width: 35%;
-    border-radius: 50%;
-    background: #fff;
-}
-
-.muzzle {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    height: 6%;
-    width: 10%;
-    background: #000000;
-    transform: translateX(-50%);
-    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-}
+/* @keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    25% {
+        transform: translate(25vw, 25vh) rotate(45deg) scale(1.5);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(50vw, 0) rotate(90deg) scale(1);
+        opacity: 0;
+    }
+    75% {
+        transform: translate(75vw, -25vh) rotate(135deg) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 0) rotate(180deg) scale(1);
+        opacity: 0;
+    }
+} */
 
 /* ====================================================*/
