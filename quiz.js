@@ -67,7 +67,9 @@ document.getElementById('user-info-form').addEventListener('submit', function (e
         username = 'Miss Boom-Boom';
     }
     const butterflyAnimation = document.getElementById('butterflyAnimation');
+    const butterflyAnimation1 = document.getElementById('butterflyAnimation1');
     butterflyAnimation.style.display = 'none';
+    butterflyAnimation1.style.display = 'none';
     // Get the greeting element
     var greeting = document.getElementById('greeting');
     var parent = greeting.parentElement;
@@ -119,8 +121,8 @@ window.onload = function () {
     const containerrow = document.getElementById('firstrow');
 
 
-    const butterflyAnimation = document.getElementById('butterflyAnimation');
-    butterflyAnimation.style.display = 'block';
+    // const butterflyAnimation = document.getElementById('butterflyAnimation');
+    // butterflyAnimation.style.display = 'block';
 
     //const antsAnimation = document.getElementById('antsAnimation');
     // const catAnimation = document.getElementById('catAnimation');
