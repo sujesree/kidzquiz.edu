@@ -1,6 +1,6 @@
 // Sample data
 let username;
-const data = [
+const data1 = [
     {
         question: "Q1:What is the color of the Sun",
         options: ["Red", "Yellow", "White", "Orange"],
@@ -47,6 +47,53 @@ const data = [
             + "So, the Moon is the main reason why we have tides on Earth. The Sun helps out a little bit, too!<br><br>"
             + "<a href='https://youtube.com/shorts/rKC1nR1d2jA?si=TerPijjftkGPe4RY' target='_blank'>Video Explanation1</a><br><br>"
             + "<a href='https://www.youtube.com/watch?v=3RdkXs8BibE' target='_blank'>Video Explanation2</a>"
+    },
+    // Add more questions as needed
+];
+
+const data = [
+    {
+        question: "How is a rainbow formed?",
+        options: ["Refraction of sunlight through water droplets", "Reflection of sunlight", "Diffraction of sunlight", "Absorption of sunlight"],
+        answer: "Refraction of sunlight through water droplets",
+        shortexplain: "A rainbow is formed by the refraction of sunlight through water droplets in the atmosphere.",
+        explanation: "<br><br> You know how when you look at a glass of water from the side, it sometimes looks bent or distorted? That's because light changes direction a little bit when it goes from the air into the water. This bending of light is called refraction."
+            + "<br><br>Now, imagine that sunlight (which is made up of different colors like red, orange, yellow, green, blue, and violet) goes through a raindrop. As the different colors enter and leave the raindrop, they bend or refract in slightly different ways. This causes the colors to separate from each other.When this happens in millions of raindrops in the sky, you see the separated colors arranged in an arc, creating a beautiful rainbow!"
+            + "<br><br>The view of the rainbow is so unique and is different for every person<br><br>"
+            + "<a href='https://www.youtube.com/watch?v=nCPPLhPTAIk' target='_blank'>Video Explanation</a>"
+    },
+    {
+        question: "How are clouds formed?",
+        options: ["Condensation of water vapor", "Evaporation of liquid water", "Freezing of water droplets", "Melting of ice crystals"],
+        answer: "Condensation of water vapor",
+        shortexplain: "Clouds are formed by the condensation of water vapor in the atmosphere.",
+        explanation: "<br><br>Have you ever noticed steam coming from a boiling pot of water? That's water vapor, which is water in a gas form. When the vapor cools down, it turns back into tiny water droplets. This process is called condensation.<br><br>"
+            + "<a href='https://www.youtube.com/watch?v=e2JMt_YJveM' target='_blank'>Video Explanation</a>"
+    },
+    {
+        question: "Why do we see stars twinkle?",
+        options: ["Because they are far away", "Due to atmospheric disturbances", "As they move closer to us", "All of the above"],
+        answer: "All of the above",
+        shortexplain: "Stars twinkle because they are far away and their light has to travel through our atmosphere, which causes it to bend and change.",
+        explanation: "<br><br>Ever notice how stars seem to dance in the night sky? They don't really move—they just appear to. This twinkling effect is caused by something called atmospheric refraction. When starlight enters our atmosphere, it bends slightly. Since the air near the ground is denser than the air higher up, the light bends more as it gets closer to the ground. This bending changes the direction of the light reaching our eyes, making the stars twinkle.<br><br>"
+            + "Stars are so far away that their light takes thousands of years to reach us. So, when you see them twinkling, remember that you're seeing a glimpse of the past!<br><br>"
+            + "<a href='https://www.youtube.com/watch?v=iaIsYaKHOug' target='_blank'>Video Explanation</a>"
+    },
+    {
+        question: "Does the sun rise or sunset?",
+        options: ["The Sun rises", "The Sun sets", "Both", "Neither"],
+        answer: "Neither",
+        shortexplain: "The Sun itself does not rise or set; it is the Earth's rotation that creates the illusion.",
+        explanation: "The Sun itself does not rise or set. It is the Earth's rotation on its axis that makes it appear as if the Sun is rising in the morning and setting in the evening.<br><br>The Earth rotates on its axis once every 24 hours. As the Earth rotates, different parts of its surface face towards the Sun. When the part of the Earth you are standing on rotates into the direct line of the Sun's rays, it appears as if the Sun is rising above the horizon in the morning. This is called sunrise.<br><br>Similarly, as the Earth continues to rotate, the part you are standing on rotates away from the direct line of the Sun's rays. The Sun appears to sink below the horizon, and this is called sunset.<br><br>So, the Sun itself does not actually move. It is the Earth's rotation that creates the illusion of the Sun rising and setting each day.<br><br>"
+            + "<a href='https://www.youtube.com/watch?v=CGwbFc6sRHk' target='_blank'>Video Explanation</a>"
+    },
+    {
+        question: "Why is the apple red in color?",
+        options: ["Presence of anthocyanin pigment and reflection of red light", "Genetic variation", "All of the above"],
+        answer: "Presence of anthocyanin pigment and reflection of red light",
+        shortexplain: "Anthocyanin pigment is responsible for the red color and it is the reflection of red light (and absorption of other colors) that determines how we perceive that color.",
+        explanation: "<br><br>The red color of apples comes from a special type of pigment called anthocyanin.This pigment is what makes many fruits and vegetables red, blue, or purple. As an apple ripens, the amount of anthocyanin increases, changing the apple's color from green to red. This process is influenced by environmental factors like light and temperature.<br><br>The red appearance of the apple is due to the way it interacts with light. The pigments in the apple skin absorb most wavelengths of light except for the red wavelengths, which are reflected. This reflected red light is what we perceive with our eyes, giving the apple its red color.<br><br>.So, while the pigment anthocyanin is responsible for the red color, it is the reflection of red light (and absorption of other colors) that determines how we perceive that color.<br><br>"
+            + "<a href='https://www.youtube.com/watch?v=HnkyxU17Q8M' target='_blank'>Video Explanation</a>"
     },
     // Add more questions as needed
 ];
@@ -220,7 +267,7 @@ window.onload = function () {
             const para = document.createElement('p');
             para.textContent = 'So ' + username + ',What did we learn today?';
             para.style.fontFamily = "'Lugrasimo', cursive";
-            para.style.fontSize = 'xxx-large';
+            para.style.fontSize = 'x-large';
             para.style.fontWeight = 'bold';
             parentDiv.appendChild(para);
             // Create a new div for each short explanation and append it to the parent div
@@ -232,7 +279,7 @@ window.onload = function () {
                     div.style.padding = '20px';
                     div.style.paddingTop = '0px';
                     div.style.fontFamily = "'Lugrasimo', cursive";
-                    div.style.fontSize = 'x-large';
+                    div.style.fontSize = 'medium';
                     div.style.fontWeight = 'bold';
                     div.className = pickrandomAnimation; // Add your animation classes
                     parentDiv.appendChild(div);
